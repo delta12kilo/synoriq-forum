@@ -5,6 +5,7 @@ export class test implements OnInit{
 
     ngOnInit() {
         console.log("hello deepak");
+        console.log("line 2");
         
     }
 }
