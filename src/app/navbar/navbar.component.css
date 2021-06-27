@@ -1,0 +1,14 @@
+.text-purple {
+    color: #A020F0;
+}
+
+.search-btn{
+    color: #A020F0;
+}
+
+.search-btn:hover{
+    color: white;
+    background-color: #A020F0;
+    border: 1px solid #A020F0;
+    border-color: #A020F0;
+}
