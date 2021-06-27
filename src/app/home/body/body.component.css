@@ -1,0 +1,21 @@
+/* .light-purple-bg {
+    background-color: #FFF9F9;
+} */
+
+.body {
+    background-color: #FFF9F9;
+}
+
+.comment-border{
+    border: 2px solid #D7A1F9;
+    border-radius: 20px;
+}
+
+.comment-bg {
+    background-color: #F6F6F6;
+}
+
+.comment-link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
