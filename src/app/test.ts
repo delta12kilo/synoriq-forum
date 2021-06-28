@@ -1,11 +1,11 @@
 
 
-export class test implements OnInit{
-    constructor() {}
+// export class test implements OnInit{
+//     constructor() {}
 
-    ngOnInit() {
-        console.log("hello deepak");
-        console.log("line 2");
+//     ngOnInit() {
+//         console.log("hello deepak");
+//         console.log("line 2");
         
-    }
-}
+//     }
+// }
