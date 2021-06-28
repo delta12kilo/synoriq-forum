@@ -9,6 +9,8 @@ import { HomeCommentsComponent } from './home/home-comments/home-comments.compon
 import { HomeSidebarComponent } from './home/home-sidebar/home-sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserCommentComponent } from './home/home-comments/user-comment/user-comment.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 
 @NgModule({
@@ -18,10 +20,13 @@ import { UserCommentComponent } from './home/home-comments/user-comment/user-com
     BodyComponent,
     HomeCommentsComponent,
     HomeSidebarComponent,
-    UserCommentComponent
+    UserCommentComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

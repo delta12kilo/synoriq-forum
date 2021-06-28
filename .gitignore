@@ -43,3 +43,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+#profile
+src/app/profile-page/profile-page.component.css.map
+src/app/profile-page/profile-page.component.scss
