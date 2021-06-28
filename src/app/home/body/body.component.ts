@@ -8,7 +8,7 @@ import { Comments } from 'src/app/comments';
 })
 export class BodyComponent implements OnInit {
   comments: Comments[];
-  isLoggedin = false;
+  // isLoggedin = true;
 
   constructor() {
     this.comments = [

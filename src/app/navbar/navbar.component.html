@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #D7A1F9;">
     <div class="container-fluid">
-      <a class="navbar-brand mx-5" href="#">Synoriq</a>
+      <a class="navbar-brand mx-5" href="#">
+        <img src="https://static.wixstatic.com/media/7e8210_fbc53a3edc0245ed8871597892e412d1~mv2.png/v1/fill/w_159,h_33,al_c,q_85,usm_0.66_1.00_0.01/7e8210_fbc53a3edc0245ed8871597892e412d1~mv2.webp" alt="">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,75 +14,20 @@
         </ul>
         <form class="d-flex">
           <!-- <input class="form-control me-2"  style="color: #A020F0;" type="search" placeholder="Search" aria-label="Search"> -->
-          <button class="btn btn-outline-success search-btn mx-1"  style="border-color: #A020F0;" type="submit">Log In</button>
+          <button 
+            class="btn btn-outline-success search-btn mx-1"  
+            style="border-color: #A020F0;" 
+            *ngIf="!isauth"
+          >Login/Signup</button>
           <!-- <p>|</p> -->
-          <button class="btn btn-outline-success search-btn mx-1"  style="border-color: #A020F0;" type="submit">Sign Up</button>
+          <button 
+            class="btn btn-outline-success search-btn mx-1"  
+            style="border-color: #A020F0;" 
+            *ngIf="isauth"
+            routerLink="/profile" 
+            routerLinkActive="active" 
+          >Profile</button>
         </form>
       </div>
     </div>
-  </nav>
-
-  <!-- <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p>
-  <p>hii</p> -->
-
-  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid ">
-      <div class="container-fluid d-flex justify-content-end">
-        <button class="px-5">Hello1</button> | 
-        <button class="px-5">Hello2</button>
-      </div>
-    </div>
-  </nav> -->
-
-<!-- <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #D7A1F9;">
-    <div class="container-fluid"> -->
-      <!-- <div class="d-flex justify-content-end">
-        <a class="navbar-brand mx-5" href="#">Synoriq</a>
-      </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-      <!-- <div class="navbar d-flex justify-content-end">
-        <button class="btn btn-primary">Hello</button>
-      </div> -->
-      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-          <li class="nav-item text-center">
-            <a class="nav-link active navbar-brand h1  mb-0 text-center" aria-current="page" href="#" style="color: #A020F0;">Forum</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2"  style="color: #A020F0;" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success search-btn"  style="border-color: #A020F0;" type="submit">Search</button>
-        </form>
-      </div> -->
-    <!-- </div>
-  </nav> -->
+</nav>
