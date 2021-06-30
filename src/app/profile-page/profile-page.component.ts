@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Activity } from './activity.model';
+import { UserModel } from './user-data.model';
 
 @Component({
   selector: 'app-profile-page',
@@ -8,15 +10,24 @@ import { FormGroup } from '@angular/forms';
 })
 export class ProfilePageComponent implements OnInit {
 
-  profileForm: FormGroup;
-
-  constructor() { }
+  profileForm;
+  activity;
+  // date = new Date;
+  
+  constructor() {}
 
   ngOnInit(): void {
+    this.profileForm = new FormGroup({
+      activity: new FormControl()
+   });
   }
 
-  onSubmit() {}
-
-  onSubmitActivity() {}
+  onSubmit(data) {
+    this.activity = data.activity; 
+    // this.date.getDate() 
+    // console.log(this.date);
+    
+  }
+  
 
 }

@@ -1,29 +1,18 @@
 <div class="container">
     <div class="profile-container">
         <div class="row">
-            <div class="col-xs-12 form-ctl"><br>
-                <div class="about-box">
-                    <span class="uName">User Name</span>
-                    <span class="uName">Deepak12</span>
-                    <br>
-                    <span class="uName">Email</span>
-                    <span class="uName">deepak@gmail.com</span>
-                    <br>
-                    <span class="uName">First Name</span>
-                    <span class="uName">Deepak</span>
-                    <br>
-                    <span class="uName">Last Name</span>
-                    <span class="uName">Kumar</span>
-                    <br>
-                    <span class="uName">Role</span>
-                    <span class="uName">SDE</span>
+            <div class="col-xs-12 form-ctl" ><br>
+                <div>
+                    <app-user-data></app-user-data>
+                <br>
                 </div>
-
                 <div class="container img-panel">
                     <img src="https://www.pngkey.com/png/detail/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png" alt="">
-
                 </div>
-                <form [formGroup]="profileForm" (ngSubmit)=onSubmit()>
+
+                
+                <form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm.value)">
+
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group">
@@ -33,19 +22,26 @@
                                     id="activity-panel" 
                                     cols="80" 
                                     rows="6"
+                                    formControlName="activity"
                                 ></textarea>
                             </div>
                         </div>
                     </div><br>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-success">Share</button>
+                        </div>
+                    </div>
                 
                 </form>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <button type="button" class="btn btn-success" (click)="onSubmitActivity()">Share</button>
-                    </div>
-                </div>
+               
+
+            
             </div>
+
         </div>
+        <p> Textbox result is: {{activity}} </p>
+        <!-- <p> Textbox date is: {{date}} </p> -->
     </div>
 
 </div>

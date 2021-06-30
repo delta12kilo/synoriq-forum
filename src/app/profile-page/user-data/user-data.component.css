@@ -1,0 +1,12 @@
+
+  .profile-container .about-box {
+    overflow: hidden;
+    width: 65%;
+    height: 200px;
+  }
+  .about-box .uName {
+    display: inline-block;
+    padding: 3px 10px 4px;
+    border-bottom: 2px solid blue;
+    width: 30%;
+  }
