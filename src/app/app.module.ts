@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UserCommentComponent } from './home/home-comments/user-comment/user-comment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { ViewCommentComponent } from './view-comment/view-comment.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     HomeCommentsComponent,
     HomeSidebarComponent,
     UserCommentComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    ViewCommentComponent
   ],
   imports: [
     BrowserModule,

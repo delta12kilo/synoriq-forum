@@ -3,7 +3,7 @@
     <div class="col-md-6">
         <!-- <app-user-comment *ngIf="isLoggedin"></app-user-comment> -->
         <ul *ngFor="let comment of comments"  class="comment-border my-2 comment-bg">
-            <a href="" class="comment-link">
+            <a routerLink="/comment" class="comment-link">
                 <app-home-comments [comment]="comment"></app-home-comments>
             </a>
         </ul>
@@ -11,7 +11,7 @@
     </div>
     <div class="col-md-2 text-center my-2">
         <div class="container row comment-border comment-bg">
-            <h3 class="my-3">Categories:</h3>
+            <h3 class="my-3 text-responsive">Categories:</h3>
             <ul *ngFor="let comment of comments" class="my-0">
                 <a class="comment-link">
                     <app-home-sidebar [comment]="comment"></app-home-sidebar>
