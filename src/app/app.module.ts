@@ -12,6 +12,8 @@ import { UserCommentComponent } from './home/home-comments/user-comment/user-com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ViewCommentComponent } from './view-comment/view-comment.component';
+import { ActivityService } from './shared/activity.service';
+import { UserDataComponent } from './profile-page/user-data/user-data.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { ViewCommentComponent } from './view-comment/view-comment.component';
     HomeSidebarComponent,
     UserCommentComponent,
     ProfilePageComponent,
-    ViewCommentComponent
+    ViewCommentComponent,
+    UserDataComponent
+
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,7 @@ import { ViewCommentComponent } from './view-comment/view-comment.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ActivityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
