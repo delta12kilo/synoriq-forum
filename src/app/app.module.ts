@@ -14,6 +14,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ViewCommentComponent } from './view-comment/view-comment.component';
 import { ActivityService } from './shared/activity.service';
 import { UserDataComponent } from './profile-page/user-data/user-data.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { UserDataComponent } from './profile-page/user-data/user-data.component'
     UserCommentComponent,
     ProfilePageComponent,
     ViewCommentComponent,
-    UserDataComponent
+    UserDataComponent,
+    PageNotFoundComponent
 
   ],
   imports: [
