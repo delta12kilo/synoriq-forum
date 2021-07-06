@@ -1,5 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Comments } from 'src/app/comments';
 
 @Component({
@@ -10,9 +11,12 @@ import { Comments } from 'src/app/comments';
 export class HomeCommentsComponent implements OnInit {
   @Input() comment: Comments;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  onClick(comment) {
+    this.router.navigate(['/comment', comment._id]);
+  }
 }
