@@ -35,6 +35,13 @@ export class CommentDetailsComponent implements OnInit {
     });
 
     this.comment = this.activity.getActivities(this.commentIdInt);
+
+    if(this.commentIdInt === 0) {
+      this.previousButtonFlag = false;
+    }
+    if(this.commentIdInt === this.activity.getActivityLength()-1) {
+      this.nextButtonFlag = false;
+    }
   }
 
   onPrevious() {
@@ -50,9 +57,9 @@ export class CommentDetailsComponent implements OnInit {
     if (this.commentIdInt-1 <= 0) {
       this.previousButtonFlag = false;
     }
-    // if (previousId > 0) {
-    //   this.previousButtonFlag = true;
-    // }
+    if (this.commentIdInt <= this.activity.getActivityLength()) {
+      this.nextButtonFlag = true;
+    }
   }
 
   onNext() {
@@ -66,6 +73,9 @@ export class CommentDetailsComponent implements OnInit {
     }
     if (this.commentIdInt >= 0) {
       this.previousButtonFlag = true;
+    }
+    if(this.commentIdInt === checkMax-2) {
+      this.nextButtonFlag = false;
     }
   }
 }
