@@ -1,0 +1,13 @@
+.comment-border{
+    border: 2px solid #D7A1F9;
+    border-radius: 20px;
+}
+
+.comment-border-white{
+    border: 2px solid #D7A1F9;
+    border-radius: 20px;
+}
+
+.comment-bg {
+    background-color: #F6F6F6;
+}
