@@ -2,22 +2,35 @@
     <div class="col-md-2"></div>
     <div class="col-md-6">
         <!-- <app-user-comment *ngIf="isLoggedin"></app-user-comment> -->
-        <ul *ngFor="let comment of activity"  class="comment-border my-2 comment-bg">
+        <!-- <ul *ngFor="let comment of activity"  class="comment-border my-2 comment-bg">
             <a routerLink="/comment" class="comment-link">
                 <app-home-comments [comment]="comment"></app-home-comments>
             </a>
+        </ul> -->
+        <ul class="list-group mt-1">
+            <li *ngFor="let comment of activity" (click)="onSelect(comment)"  class="list-group-item comment-border mt-1 comment-bg">
+                <!-- <a routerLink="/comment" class="comment-link"> -->
+                <a class="comment-link">
+                    <app-home-comments [comment]="comment"></app-home-comments>
+                </a>
+            </li>
         </ul>
-       
     </div>
     <div class="col-md-2 text-center my-2">
         <div class="container row comment-border comment-bg">
             <h3 class="my-3 text-responsive">Categories:</h3>
-            <ul *ngFor="let comment of activity" class="my-0">
+            <!-- <ul *ngFor="let comment of activity" class="my-0" (click)="onSelect(comment)">
                 <a class="comment-link">
                     <app-home-sidebar [comment]="comment"></app-home-sidebar>
                 </a>
+            </ul> -->
+            <ul >
+                <li *ngFor="let comment of activity" class="my-0" (click)="onSelectCategory(comment)">
+                    <a class="comment-link">
+                        <app-home-sidebar [comment]="comment"></app-home-sidebar>
+                    </a>
+                </li>
             </ul>
-           
         </div>
     </div>
 </div>
