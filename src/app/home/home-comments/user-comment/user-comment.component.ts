@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-comment',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserCommentComponent implements OnInit {
 
-  constructor() { }
+  // public commentId;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // let id = this.route.snapshot.paramMap.get('_id');
+    // console.log(id);
+    // this.commentId = id;
   }
 
 }
