@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Activity } from './activity.model';
 import { UserModel } from './user-data.model';
+import { ActivityService } from '../shared/activity.service';
+import { Comments } from '../comments';
 
 @Component({
   selector: 'app-profile-page',
@@ -10,23 +12,25 @@ import { UserModel } from './user-data.model';
 })
 export class ProfilePageComponent implements OnInit {
 
-  profileForm;
+  profileForm: FormGroup;
   activity;
+  
   // date = new Date;
   
-  constructor() {}
+  constructor(private activityService: ActivityService) {}
 
   ngOnInit(): void {
     this.profileForm = new FormGroup({
-      activity: new FormControl()
+      activity: new FormControl(),
+      tag: new FormControl()
    });
   }
 
-  onSubmit(data) {
-    this.activity = data.activity; 
-    // this.date.getDate() 
-    // console.log(this.date);
-    
+  onSubmit() {
+    const act = new Comments(
+      this.profileForm.value['activity'],'deepak','12/12/1211',this.profileForm.value['tag']
+    )
+    this.activityService.addActivity(act);
   }
   
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { UserModel } from '../user-data.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { UserModel } from '../user-data.model';
   styleUrls: ['./user-data.component.css']
 })
 export class UserDataComponent implements OnInit {
-
+  @Output() 
   userData: UserModel;
 
   constructor() {
