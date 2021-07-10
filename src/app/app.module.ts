@@ -16,6 +16,7 @@ import { ActivityService } from './shared/activity.service';
 import { UserDataComponent } from './profile-page/user-data/user-data.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CommentDetailsComponent } from './comment-details/comment-details.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CommentDetailsComponent } from './comment-details/comment-details.compo
     ViewCommentComponent,
     UserDataComponent,
     PageNotFoundComponent,
-    CommentDetailsComponent
+    CommentDetailsComponent,
+    AuthComponent
 
   ],
   imports: [

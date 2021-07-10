@@ -9,10 +9,13 @@
         </ul> -->
         <ul class="list-group mt-1">
             <!-- <li *ngFor="let comment of activity" (click)="onSelect(comment)"  class="list-group-item comment-border mt-1 comment-bg"> -->
-            <li *ngFor="let comment of activity" class="list-group-item comment-border mt-1 comment-bg">
+            <li *ngFor="let comment of activity; let i = index"
+                class="list-group-item comment-border mt-1 comment-bg"
+                
+            >
                 <!-- <a routerLink="/comment" class="comment-link"> -->
                 <a class="comment-link">
-                    <app-home-comments [comment]="comment"></app-home-comments>
+                    <app-home-comments [comment]="comment" [index] = "i"></app-home-comments>
                 </a>
             </li>
         </ul>
