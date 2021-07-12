@@ -20,21 +20,20 @@ export class CommentDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private activity: ActivityService, private router: Router) { }
 
   ngOnInit(): void {
-    // let id = this.route.snapshot.paramMap.get('id');
-    // console.log(id);
-    // this.commentId = id;
-    // let intId = parseInt(id);
-    // this.commentIdInt = intId;
-    // console.log(this.activity.getActivities(intId));
-    // this.comment = this.activity.getActivities(intId);
 
     this.route.paramMap.subscribe((params: ParamMap)=>{
       let id = parseInt(params.get('id'));
       // this.commentId = id;
       this.commentIdInt = id;
+      
+      
     });
 
     this.comment = this.activity.getActivities(this.commentIdInt);
+
+    if (this.commentIdInt>this.activity.getActivityLength()) {
+      this.router.navigate(['/notfound']);
+    }
 
     if(this.commentIdInt === 0) {
       this.previousButtonFlag = false;
@@ -50,10 +49,7 @@ export class CommentDetailsComponent implements OnInit {
       this.router.navigate(['/comment', previousId])
       this.comment = this.activity.getActivities(previousId);
       // this.previousButtonFlag = true;
-    } else {
-      // this.router.navigate()
-      // this.previousButtonFlag = false;
-    }
+    } 
     if (this.commentIdInt-1 <= 0) {
       this.previousButtonFlag = false;
     }

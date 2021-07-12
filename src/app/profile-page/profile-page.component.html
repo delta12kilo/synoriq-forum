@@ -11,22 +11,48 @@
                 </div>
 
                 
-                <form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm.value)">
+                <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+                    <span
+                                    class="help-block"
+                                    *ngIf="status">
+                                    Submit Successfully
+                                </span>
 
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group">
                                 <textarea 
-                                    name="activity" 
+                                   
                                     placeholder="What's on your mind..." 
                                     id="activity-panel" 
-                                    cols="80" 
+                                    cols="70" 
                                     rows="6"
                                     formControlName="activity"
+                                    required
                                 ></textarea>
+                                <span
+                                    class="warn-block"
+                                    *ngIf="!profileForm.get('activity').valid && profileForm.get('activity').touched "
+                                >
+                                    This feild is required.
+                                </span>
                             </div>
                         </div>
                     </div><br>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <input 
+                                    name="tag" 
+                                    placeholder="Tag" 
+                                    id="activity-panel" 
+                                    formControlName="tag"
+                                    required
+                                >
+                            </div>
+                        </div>
+                    </div><br><br>
                     <div class="row">
                         <div class="col-xs-12">
                             <button type="submit" class="btn btn-success">Share</button>
@@ -40,8 +66,7 @@
             </div>
 
         </div>
-        <p> Textbox result is: {{activity}} </p>
-        <!-- <p> Textbox date is: {{date}} </p> -->
+        
     </div>
 
 </div>
