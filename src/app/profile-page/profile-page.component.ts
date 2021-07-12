@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Activity } from './activity.model';
 import { UserModel } from './user-data.model';
 import { ActivityService } from '../shared/activity.service';
@@ -14,6 +14,7 @@ export class ProfilePageComponent implements OnInit {
 
   profileForm: FormGroup;
   activity;
+  status: boolean = false;
   
   // date = new Date;
   
@@ -21,17 +22,22 @@ export class ProfilePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.profileForm = new FormGroup({
-      activity: new FormControl(),
+      activity: new FormControl(null, [Validators.required]),
       tag: new FormControl()
    });
   }
 
   onSubmit() {
-    const act = new Comments(
-      this.profileForm.value['activity'],'deepak','12/12/1211',this.profileForm.value['tag']
-    )
-    this.activityService.addActivity(act);
+    if (this.profileForm.valid) {
+      const act = new Comments(
+        this.profileForm.value['activity'],'deepak','12/12/1211',this.profileForm.value['tag']
+      );
+      this.activityService.addActivity(act);
+      this.status = true;
+    }
+    this.profileForm.reset();
   }
+  
   
 
 }
