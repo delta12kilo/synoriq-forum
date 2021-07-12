@@ -15,8 +15,7 @@ export class ProfilePageComponent implements OnInit {
   profileForm: FormGroup;
   activity;
   status: boolean = false;
-  
-  // date = new Date;
+  dateTime: Date ;
   
   constructor(private activityService: ActivityService) {}
 
@@ -29,8 +28,10 @@ export class ProfilePageComponent implements OnInit {
 
   onSubmit() {
     if (this.profileForm.valid) {
+      this.dateTime = new Date();
+      const newDate = (this.dateTime.getMonth() + 1) + '/' + this.dateTime.getDate() + '/' +  this.dateTime.getFullYear();
       const act = new Comments(
-        this.profileForm.value['activity'],'deepak','12/12/1211',this.profileForm.value['tag']
+        this.profileForm.value['activity'],'deepak',newDate,this.profileForm.value['tag']
       );
       this.activityService.addActivity(act);
       this.status = true;
