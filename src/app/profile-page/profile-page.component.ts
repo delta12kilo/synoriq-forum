@@ -16,7 +16,7 @@ export class ProfilePageComponent implements OnInit {
   activity;
   status: boolean = false;
   dateTime: Date ;
-  popUp = true;
+  popUp = false;
   
   constructor(private activityService: ActivityService) {}
 
