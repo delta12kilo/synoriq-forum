@@ -1,3 +1,9 @@
+<div *ngIf="popUp" (click)="onPopupClose()" class="test1">
+    <div class="alert alert-success alert-dismissible test" role="alert">
+        <strong>Congratulations!</strong> Your post shared Successfully.
+        <button (click)="onPopupClose()" type="button" class="btn-close"></button>
+    </div>
+</div>
 <div class="container">
     <div class="profile-container">
         <div class="row">
@@ -55,6 +61,8 @@
                     </div><br><br>
                     <div class="row">
                         <div class="col-xs-12">
+                            
+                            
                             <button type="submit" class="btn btn-success">Share</button>
                         </div>
                     </div>

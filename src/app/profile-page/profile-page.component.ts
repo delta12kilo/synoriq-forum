@@ -16,6 +16,7 @@ export class ProfilePageComponent implements OnInit {
   activity;
   status: boolean = false;
   dateTime: Date ;
+  popUp = true;
   
   constructor(private activityService: ActivityService) {}
 
@@ -35,10 +36,13 @@ export class ProfilePageComponent implements OnInit {
       );
       this.activityService.addActivity(act);
       this.status = true;
+      this.popUp = true;
     }
     this.profileForm.reset();
   }
   
-  
+  onPopupClose() {
+    this.popUp = false;
+  }
 
 }
