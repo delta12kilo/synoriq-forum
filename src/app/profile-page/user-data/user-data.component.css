@@ -1,12 +1,16 @@
 
-  .profile-container .about-box {
-    overflow: hidden;
-    width: 65%;
-    height: 200px;
-  }
-  .about-box .uName {
+.about-box {
+  width: 60%;
+  height: 13rem;
+  background-color: rgb(238, 233, 230);
+  box-shadow: 0 5px 10px rgba(185, 137, 214, 70%);
+  border-radius: .5em;
+  margin: 1rem;
+  padding: 1rem;
+}
+.uName {
     display: inline-block;
     padding: 3px 10px 4px;
     border-bottom: 2px solid blue;
-    width: 30%;
+    width: 50%;
   }
